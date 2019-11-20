@@ -1,4 +1,5 @@
 <?php
+namespace Jokenpo;
 
 class Jokenpo
 {
@@ -13,7 +14,13 @@ class Jokenpo
         return rand(0, 2);
     }
 
-    public function winner($choice1, $choice2) {
+    /**
+     * @param $choice1
+     * @param $choice2
+     * @return string
+     */
+    public function winner($choice1, $choice2) : string {
+
         if ($choice1 == self::ROCK && $choice2 == self::ROCK ||
            $choice1 == self::PAPER && $choice2 == self::PAPER ||
            $choice1 == self::SCISSORS && $choice2 == self::SCISSORS
@@ -40,14 +47,3 @@ class Jokenpo
         }
     }
 }
-
-$obj = new Jokenpo();
-$player1 = $obj->play();
-$player2 = $obj->play();
-
-echo $player1 . PHP_EOL;
-echo $player2 . PHP_EOL;
-
-echo $obj->winner($player1, $player2) . PHP_EOL;
-
-?>
